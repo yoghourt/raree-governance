@@ -1,6 +1,6 @@
 # Raree Governance Topology Spec v1
 
-Version: `v1-draft`
+Version: `v1`
 Status: `Approved Scope Alignment`
 Type: `Governance Architecture Specification`
 Audience:

@@ -1,0 +1,12 @@
+{
+  "name": "raree-governance",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Raree Show governance authority repository",
+  "scripts": {
+    "bootstrap": "node scripts/bootstrap.mjs",
+    "validate": "node scripts/validate.mjs",
+    "check:governance": "node scripts/check-governance.mjs"
+  }
+}
