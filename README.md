@@ -25,3 +25,18 @@ Repository-level `AGENTS.md` files act as thin adapters only; they declare entry
 AI tooling and validation MUST read governance from the local filesystem at `/governance/*`. Governance discovery MUST NOT depend on remote URLs, implicit IDE state, or environment-specific path heuristics.
 
 The locally mounted governance tree is the operational source of truth for assisted development workflows.
+
+## Change telemetry
+
+Pull request narration MUST follow `specs/CHANGE_TELEMETRY_SPEC.md`.
+
+| PR type | Template |
+| ------- | -------- |
+| Default | `templates/PR_TEMPLATE.md` |
+| ADR | `templates/ADR_TEMPLATE.md` |
+| Spike | `templates/SPIKE_TEMPLATE.md` |
+| Debug | `templates/DEBUG_TEMPLATE.md` |
+
+Templates are transport mechanisms for governance-defined telemetry contracts. They do not supersede constitutional authority.
+
+Governance artifact versioning belongs in document metadata (`Version:`, `Status:`, `Supersedes:`) only. Filenames MUST remain stable authority paths without version suffixes.

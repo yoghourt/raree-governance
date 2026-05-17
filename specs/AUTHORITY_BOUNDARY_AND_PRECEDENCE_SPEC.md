@@ -1,4 +1,4 @@
-# AUTHORITY_BOUNDARY_AND_PRECEDENCE_SPEC_V1
+# AUTHORITY_BOUNDARY_AND_PRECEDENCE_SPEC
 
 Version: `v1`
 Status: `Architecture Approved`
@@ -6,9 +6,9 @@ Type: `Governance Authority Clarification Specification`
 
 Depends on:
 
-* `GOVERNANCE_TOPOLOGY_SPEC_V1.md`
-* `GOVERNANCE_BOOTSTRAP_SPEC_V1.md`
-* `GOVERNANCE_INTEGRATION_SPEC_V1.md`
+* `GOVERNANCE_TOPOLOGY_SPEC.md`
+* `GOVERNANCE_BOOTSTRAP_SPEC.md`
+* `GOVERNANCE_INTEGRATION_SPEC.md`
 
 Audience:
 

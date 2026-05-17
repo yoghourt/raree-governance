@@ -1,4 +1,4 @@
-# Raree Governance Topology Spec v1
+# Raree Governance Topology Spec
 
 Version: `v1`
 Status: `Approved Scope Alignment`
@@ -214,9 +214,14 @@ raree-governance/
 ├── templates/
 │   ├── ADR_TEMPLATE.md
 │   ├── PR_TEMPLATE.md
-│   └── SPIKE_TEMPLATE.md
+│   ├── SPIKE_TEMPLATE.md
+│   └── DEBUG_TEMPLATE.md
 ├── specs/
-│   └── GOVERNANCE_TOPOLOGY_SPEC_V1.md
+│   ├── GOVERNANCE_TOPOLOGY_SPEC.md
+│   ├── GOVERNANCE_BOOTSTRAP_SPEC.md
+│   ├── GOVERNANCE_INTEGRATION_SPEC.md
+│   ├── AUTHORITY_BOUNDARY_AND_PRECEDENCE_SPEC.md
+│   └── CHANGE_TELEMETRY_SPEC.md
 └── future/
     ├── scripts/
     ├── ci/

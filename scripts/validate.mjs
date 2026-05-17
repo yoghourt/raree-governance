@@ -7,7 +7,7 @@ import { constants } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
 const requiredFiles = [
   "FOUNDATION.md",
@@ -18,11 +18,15 @@ const requiredFiles = [
   "README.md",
   "package.json",
   ".gitignore",
-  "specs/GOVERNANCE_TOPOLOGY_SPEC_V1.md",
-  "specs/GOVERNANCE_BOOTSTRAP_SPEC_V1.md",
+  "specs/GOVERNANCE_TOPOLOGY_SPEC.md",
+  "specs/GOVERNANCE_BOOTSTRAP_SPEC.md",
+  "specs/GOVERNANCE_INTEGRATION_SPEC.md",
+  "specs/AUTHORITY_BOUNDARY_AND_PRECEDENCE_SPEC.md",
+  "specs/CHANGE_TELEMETRY_SPEC.md",
   "templates/ADR_TEMPLATE.md",
   "templates/PR_TEMPLATE.md",
   "templates/SPIKE_TEMPLATE.md",
+  "templates/DEBUG_TEMPLATE.md",
 ];
 
 let failed = false;

@@ -1,4 +1,4 @@
-# Raree Governance Bootstrap Spec v1
+# Raree Governance Bootstrap Spec
 
 Version: `v1`
 Status: `Architecture Approved`
@@ -6,7 +6,7 @@ Type: `Governance Bootstrap Specification`
 
 Depends on:
 
-* `GOVERNANCE_TOPOLOGY_SPEC_V1.md`
+* `GOVERNANCE_TOPOLOGY_SPEC.md`
 
 Audience:
 

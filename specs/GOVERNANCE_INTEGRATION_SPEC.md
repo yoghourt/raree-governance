@@ -1,11 +1,11 @@
-# Raree Governance Integration Spec v1
+# Raree Governance Integration Spec
 
 Version: `v1`
 Status: `Architecture Approved`
 Type: `Governance Integration Specification`
 Depends on:
 
-* `GOVERNANCE_TOPOLOGY_SPEC_V1.md`
+* `GOVERNANCE_TOPOLOGY_SPEC.md`
 
 Audience:
 
