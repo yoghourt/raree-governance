@@ -443,6 +443,9 @@ PR Contract
 Tool Adapters
 ```
 
+Tool Adapters in this hierarchy are a subset of **generated transport mirrors** defined in `AUTHORITY_BOUNDARY_AND_PRECEDENCE_SPEC.md` §4.
+They remain below constitutional governance authority.
+
 ---
 
 ## 10.2 Supersede Rule
@@ -463,6 +466,14 @@ governance-defined telemetry contracts
 ---
 
 # 11. Adapter Model
+
+Tool adapters in this specification are **generated transport mirrors** under the Adapter Layer.
+
+Canonical semantics — classification, authority ownership, drift invalidation, propagation, and persistence — are defined in:
+
+* `AUTHORITY_BOUNDARY_AND_PRECEDENCE_SPEC.md` §4.5–4.6
+
+---
 
 ## 11.1 Tool Adapter Principle
 
@@ -489,10 +500,12 @@ Future adapters MAY include:
 These are considered:
 
 ```text id="h2q4pk"
-transport mechanisms
+generated transport mirrors
 ```
 
-NOT constitutional authority.
+(formerly described as transport mechanisms).
+
+They are NOT constitutional authority.
 
 ---
 

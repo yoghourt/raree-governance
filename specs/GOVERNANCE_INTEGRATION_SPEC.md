@@ -89,11 +89,15 @@ The following are forbidden:
 - custom governance mount paths
 - repo-specific governance forks
 - runtime governance downloading
+- treating generated transport mirrors as governance authority
 ```
 
 Reason:
 
 These patterns introduce governance drift and nondeterministic runtime behavior.
+
+Locally modified generated transport mirrors are non-authoritative and MUST be invalidated by deterministic sync propagation from `/governance/*`.
+See `AUTHORITY_BOUNDARY_AND_PRECEDENCE_SPEC.md` §4.5.3.
 
 ---
 
@@ -319,7 +323,7 @@ Spec v1 intentionally reserves future extension capability for:
 ```txt id="e8m1yu"
 - CI enforcement
 - governance linting
-- automated sync validation
+- automated sync validation (MAY align with AUTHORITY integrity expectations; SHOULD, not mandated)
 - llms.txt
 - IDE adapters
 - MCP tooling
@@ -328,6 +332,8 @@ Spec v1 intentionally reserves future extension capability for:
 ```
 
 Spec v1 defines topology and integration contracts only.
+
+Generated transport mirror semantics and integrity expectations are defined in `AUTHORITY_BOUNDARY_AND_PRECEDENCE_SPEC.md` §4 and §6.3.
 
 ---
 

@@ -20,6 +20,8 @@ git submodule update --init --recursive
 
 Repository-level `AGENTS.md` files act as thin adapters only; they declare entrypoints and local paths but do not redefine shared governance rules.
 
+Generated transport adapters (platform-integration mirrors) and their authority, drift, propagation, and persistence semantics are defined in `specs/AUTHORITY_BOUNDARY_AND_PRECEDENCE_SPEC.md` §4.
+
 ## Deterministic local governance
 
 AI tooling and validation MUST read governance from the local filesystem at `/governance/*`. Governance discovery MUST NOT depend on remote URLs, implicit IDE state, or environment-specific path heuristics.

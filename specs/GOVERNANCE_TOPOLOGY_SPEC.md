@@ -236,13 +236,13 @@ raree-governance/
 
 The following directories are intentionally reserved:
 
-| Directory         | Future Purpose                   |
-| ----------------- | -------------------------------- |
-| `future/scripts`  | governance synchronization       |
-| `future/ci`       | governance validation            |
-| `future/skills`   | reusable AI workflows            |
-| `future/adapters` | IDE / AI-tool adapters           |
-| `future/mcp`      | governance-aware runtime tooling |
+| Directory         | Future Purpose                   | Semantic Role (non-authoritative)                                      |
+| ----------------- | -------------------------------- | ---------------------------------------------------------------------- |
+| `future/scripts`  | governance synchronization       | sync adapter propagation surface (authority → consumer transport)      |
+| `future/ci`       | governance validation            | —                                                                      |
+| `future/skills`   | reusable AI workflows            | —                                                                      |
+| `future/adapters` | IDE / AI-tool adapters           | transport mirror generation sources (non-authoritative)                |
+| `future/mcp`      | governance-aware runtime tooling | —                                                                      |
 
 Spec v1 reserves topology only.
 
