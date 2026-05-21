@@ -1,6 +1,6 @@
 # CHANGE_TELEMETRY_SPEC
 
-Version: `v1`
+Version: `v1.1`
 Status: `Architecture Approved`
 Type: `Governance Specification`
 
@@ -91,6 +91,8 @@ tool adapters
 ```
 
 NOT governance authority.
+
+IDE and repository-global tool rules are adapter-layer artifacts; they MUST NOT redefine PR narration topology mandated by this specification (see §6.2).
 
 ---
 

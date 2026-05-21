@@ -1,7 +1,8 @@
 # AUTHORITY_BOUNDARY_AND_PRECEDENCE_SPEC
 
-Version: `v1`
+Version: `v1.1`
 Status: `Architecture Approved`
+Supersedes: `v1` (§7.2, §9, §11 conflict and enforcement semantics)
 Type: `Governance Authority Clarification Specification`
 
 Depends on:
@@ -490,6 +491,10 @@ higher-layer authority wins
 
 Lower-layer interpretation becomes operationally invalid.
 
+When the conflict is limited to **PR narration structure** (topology mandated by `CHANGE_TELEMETRY_SPEC.md`), invalidation applies to the **conflicting structure only**, per §9.4. The remainder of the lower-layer artifact MUST NOT be treated as globally invalid solely because of that structural conflict.
+
+Precedence MUST NOT be interpreted as permission to apply a **lower-priority** adapter PR topology alongside constitutional PR topology. Heuristic merging of adapter-layer PR narration structure with governance-required PR narration structure is **forbidden**. Under structural conflict, precedence means the conflicting structure MUST NOT be executed—not that both structures MAY be combined.
+
 ---
 
 # 8. Supersession Semantics
@@ -542,17 +547,19 @@ A governance conflict exists when a lower-layer artifact:
 
 When a generated transport mirror has drifted from governance authority through local modification, the mirror becomes **operationally invalid** for governance interpretation until deterministic sync propagation restores alignment.
 
+PR narration structure conflicts with change-telemetry topology are governed by §9.4.
+
 ---
 
 ## 9.2 Operational Invalidation
 
-Conflicting lower-layer artifacts become:
+Once a governance conflict is established, the **identified conflicting structure** becomes operationally invalid as a **boolean** state: it MUST NOT be executed or merged into an operative interpretation.
 
-```text id="l8v3pk"
-operationally invalid
-```
+Invalidation is not a soft override where lower-priority guidance remains partially applicable. Lower-layer artifacts MUST NOT retain operative conflicting structure under the label of lower priority.
 
-once governance conflict is established.
+For tool-adapter structural conflicts with governance-required PR topology, invalidation granularity is defined in §9.4.
+
+Heuristic merging of adapter-layer PR narration topology with constitutional PR narration topology is **forbidden**.
 
 ---
 
@@ -565,6 +572,40 @@ invalid operational state
 ```
 
 Silent precedence ambiguity is forbidden.
+
+---
+
+## 9.4 Tool Adapter Structural Conflict
+
+A **tool adapter structural conflict** exists when a tool adapter introduces PR narration structure that conflicts with governance-required topology defined in `CHANGE_TELEMETRY_SPEC.md` (including §6.2 Mandatory Pull Request Topology).
+
+Tool adapters in scope include, without limitation:
+
+```text id="u4s9pk"
+- IDE rules and repository-global tool rules
+- entry adapters (AGENTS.md) where they prescribe PR narration structure
+- generated transport mirrors that prescribe PR section topology
+```
+
+### Partial Structural Invalidation
+
+When a tool adapter structural conflict is established:
+
+```text id="v1t6hf"
+only the conflicting structural instruction becomes operationally invalid
+```
+
+Non-conflicting adapter semantics (for example git hygiene, branch naming, review checklists) **MAY remain active**.
+
+Conflict MUST NOT be resolved by heuristic merging under "lower priority". Adapter-layer PR topology and governance-required PR topology MUST NOT be combined into a hybrid narration structure.
+
+Conflict constitutes an **invalid operational state** for the conflicting structure. Workflows MUST fail-fast: do not merge conflicting PR narration structures.
+
+### Restrictions
+
+Conflict resolution MUST NOT treat the entire adapter artifact as globally invalid solely because one structural instruction conflicts with change-telemetry topology.
+
+Precedence MUST NOT authorize retaining operative conflicting PR structure from the adapter layer.
 
 ---
 
@@ -602,25 +643,47 @@ Filesystem locality does not imply governance authority.
 
 # 11. Future Enforcement Boundary
 
+## 11.1 Constitutional Scope
+
 This specification defines:
 
 ```text id="p9q4rb"
 logical governance semantics
 ```
 
+and the fail-fast logical model for governance conflicts (§9.3).
+
 only.
 
 This specification intentionally does NOT define:
 
 ```text id="q5m8zb"
-- CI enforcement
-- automatic conflict detection
+- CI workflow definitions
+- automatic conflict detection algorithms
 - linting systems
-- runtime governance validators
-- IDE enforcement tooling
+- runtime governance validator implementations
+- IDE enforcement tooling implementations
+- enforcement thresholds or numeric constants (for example character-length gates)
 ```
 
-Those belong to future governance infrastructure phases.
+Algorithmic and tooling constants belong to implementation-layer artifacts in consumer repositories, not to constitutional authority.
+
+## 11.2 Implementation Layer Transport Closure
+
+The Implementation Layer in consumer repositories **MAY** implement **transport closure** by:
+
+```text id="w2e7pk"
+- exposing an open-pr class entrypoint that applies governance-required PR topology
+- running CI validation that references CHANGE_TELEMETRY_SPEC.md contracts
+```
+
+Such enforcement realizes constitutional semantics; it does not become constitutional authority. CI workflows, scripts, and validator thresholds are implementation concerns aligned with—not superseding—governance specifications.
+
+This specification does not mandate specific consumer filenames, workflow YAML, or prose-based PR type detection in governance text.
+
+## 11.3 Non-Mandate Clarification
+
+Permitting implementation-layer enforcement does not elevate CI, IDE tooling, or repository scripts to the Constitutional Layer. Consumer repositories MUST NOT treat implementation enforcement artifacts as sources of governance semantic authority.
 
 ---
 
@@ -684,6 +747,8 @@ Governance rules supersede conflicting local rules.
 Meaning:
 
 The lower-layer conflicting rule becomes operationally invalid.
+
+Structural invalidation (§9.4) invalidates only the conflicting instruction or structure. It does not require deleting or disregarding an entire adapter artifact when non-conflicting adapter semantics remain valid.
 
 ---
 
