@@ -1,11 +1,3 @@
-# ADR Pull Request
-
-Authority: `specs/CHANGE_TELEMETRY_SPEC.md` (ADR PR topology)
-
-Use constraint-oriented narration. Prefer verbs such as formalize, enforce, validate, isolate, constrain, normalize, harden, freeze, and supersede.
-
----
-
 ## What
 
 <!-- Operational changes introduced by this ADR. -->

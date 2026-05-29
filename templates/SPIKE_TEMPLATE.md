@@ -1,11 +1,3 @@
-# Spike Pull Request
-
-Authority: `specs/CHANGE_TELEMETRY_SPEC.md` (Spike PR topology)
-
-Use constraint-oriented narration. Prefer verbs such as formalize, enforce, validate, isolate, constrain, normalize, harden, freeze, and supersede.
-
----
-
 ## What
 
 <!-- Scope of investigation and artifacts produced. -->
