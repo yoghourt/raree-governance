@@ -55,7 +55,26 @@ This specification intentionally does NOT define:
 
 # 2. Governance Layer Topology
 
-Raree governance is organized into three operational authority layers:
+`FOUNDATION.md §3` defines the canonical five-layer governance hierarchy:
+
+```text id="f5lyr1"
+Constitutional Layer
+        ↓
+Governance Architecture Layer
+        ↓
+Adapter Layer
+        ↓
+Implementation Layer
+        ↓
+Narrative Layer
+```
+
+This specification governs within the **Governance Architecture Layer**.
+It defines operational precedence mechanics, conflict resolution semantics, and adapter topology.
+It is authoritative within the Governance Architecture Layer and binding on lower layers.
+It does not supersede the Constitutional Layer.
+
+For operational purposes, this specification uses a condensed three-layer view that collapses layers not relevant to its subject matter:
 
 ```text id="h7n2pk"
 Constitutional Layer
@@ -684,6 +703,23 @@ This specification does not mandate specific consumer filenames, workflow YAML, 
 ## 11.3 Non-Mandate Clarification
 
 Permitting implementation-layer enforcement does not elevate CI, IDE tooling, or repository scripts to the Constitutional Layer. Consumer repositories MUST NOT treat implementation enforcement artifacts as sources of governance semantic authority.
+
+---
+
+## 11.4 Enforcement Chain Mapping
+
+This section provides an inspectable mapping of the governance enforcement chain currently active in this repository, as required by `FOUNDATION.md §6` (Zero-Trust Governance Principle: prefer inspectable enforcement).
+
+This table is a **descriptive mapping** of existing semantics. It does not define new enforcement semantics; those are defined in §9 (Conflict Semantics) and the referenced specifications.
+
+| Law | Enforcement Point | Verification (Current State) | Failure Behavior |
+| --- | ----------------- | ----------------------------- | ---------------- |
+| `FOUNDATION.md §1` — Runtime Supremacy | §7.2, §8.1 of this specification: governance supersedes conflicting local interpretation | No mechanical verification currently exists. Enforcement is AI-agent-binding only. | §9.2: conflicting artifact becomes operationally invalid; AI workflows MUST treat as invalid operational state |
+| `FOUNDATION.md §5` — Constitutional Escalation (via `ADR_RULES.md §4`) | ADR_RULES §4 routing: ADR introducing qualifying constraint MUST trigger Constitutional Escalation Review | No mechanical gate currently exists. Enforcement is governance-review-binding. | ADR may NOT proceed to `Accepted` state without escalation review completion |
+| `CHANGE_TELEMETRY_SPEC.md §6.2` — Mandatory PR Topology | §9.4 of this specification: partial structural invalidation of conflicting tool adapter instructions | No CI enforcement currently exists. Target state: `future/ci` validation. | §9.2: conflicting PR narration structure is operationally invalid; fail-fast; heuristic merging forbidden |
+| Governance file presence (`scripts/validate.mjs`) | `scripts/validate.mjs`: required file presence gate | File existence check (v1 placeholder — no semantic content verification) | `process.exit(1)` on missing required files; bootstrapping workflows fail deterministically |
+
+**Verification gap**: The Verification column for the first three rows currently contains no mechanical enforcement. Semantic violations are AI-agent-binding only. Mechanical verification is reserved for `future/ci` implementation as defined in §11.1.
 
 ---
 
