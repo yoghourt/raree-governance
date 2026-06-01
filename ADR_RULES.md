@@ -275,3 +275,55 @@ This preserves audit continuity.
 Governance legitimacy principles are defined in `FOUNDATION.md §6`.
 
 In the context of ADR governance: an ADR does not acquire constitutional authority through narrative repetition or implementation detail alone. ADR legitimacy requires enforcement, escalation approval (where applicable), and formal governance recognition within the lifecycle defined in §6 (Lifecycle Enumeration).
+
+---
+
+# 13. ADR ↔ SPEC Relationship
+
+This section formally defines the required derivation topology between ADRs and SPECs, and the prohibited implementation paths.
+
+## Required Topology
+
+The Raree governance chain MUST follow this ordering for all implementation work:
+
+```text
+ADR
+→ SPEC
+→ Implementation
+→ Audit
+```
+
+This topology is binding for all consumer repositories.
+
+## Topology Rules
+
+An ADR MUST be Accepted before a SPEC may derive from it.
+
+A SPEC MUST derive from at least one Accepted ADR.
+
+A SPEC MUST reach Approved status before implementation may begin.
+
+Implementation artifacts MUST reference at least one SPEC with Approved status.
+
+Audit artifacts MUST reference the SPEC that governed the implementation being audited.
+
+## Prohibited Paths
+
+The following derivation paths are explicitly prohibited:
+
+```text
+ADR → Implementation    (prohibited: no approved SPEC exists)
+ADR → Audit             (prohibited: no SPEC or Implementation)
+```
+
+Implementation work that cannot be traced to an Approved SPEC is a governance violation.
+
+Implementation work that cannot be traced to an Accepted ADR through a SPEC chain is a governance violation.
+
+## Enforcement
+
+Governance violations of the ADR → SPEC → Implementation topology MUST be corrected before the relevant implementation artifact may be merged, deployed, or promoted.
+
+Silent violation is prohibited.
+
+See `SPEC_RULES.md §4` for the canonical SPEC authority topology definition.
