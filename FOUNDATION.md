@@ -67,6 +67,8 @@ Examples may include:
 Raree governance operates under the following authority structure:
 
 ```text id="efmnpy"
+Constitution.md  (Constitutional Authority)
+    ↓
 Constitutional Layer
     ↓
 Governance Architecture Layer
@@ -76,7 +78,11 @@ Adapter Layer
 Implementation Layer
     ↓
 Narrative Layer
+    ↓
+Runtime
 ```
+
+`Constitution.md` defines permanent Raree Show principles. All governance layers derive authority from and MUST remain compatible with it.
 
 ---
 
@@ -110,12 +116,22 @@ Narrative layers are informational, not authoritative.
 
 The following classification formally assigns all current governance artifacts to their authoritative layer.
 
+### Constitutional Authority
+
+The following root-level file is the supreme governance authority of this repository:
+
+```text id="cauth1"
+Constitution.md  — constitutional authority; defines permanent Raree Show principles
+```
+
+All governance documents, including the Constitutional Layer below, derive authority from `Constitution.md`.
+
 ### Constitutional Layer Artifacts
 
 The following root-level files constitute the Constitutional Layer of this repository:
 
 ```text id="cla7f2"
-FOUNDATION.md        — constitutional kernel (this document)
+FOUNDATION.md        — governance constitutional kernel (this document)
 ADR_RULES.md         — ADR lifecycle law
 RETRIEVAL.md         — retrieval governance
 NAVIGATION.md        — navigation governance

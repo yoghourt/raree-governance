@@ -55,9 +55,11 @@ This specification intentionally does NOT define:
 
 # 2. Governance Layer Topology
 
-`FOUNDATION.md §3` defines the canonical five-layer governance hierarchy:
+`FOUNDATION.md §3` defines the canonical five-layer governance hierarchy, subordinate to `Constitution.md`:
 
 ```text id="f5lyr1"
+Constitution.md  (Constitutional Authority)
+        ↓
 Constitutional Layer
         ↓
 Governance Architecture Layer
@@ -137,6 +139,7 @@ The Constitutional Layer resides in:
 including:
 
 ```txt id="k1m5hf"
+Constitution.md
 FOUNDATION.md
 RETRIEVAL.md
 NAVIGATION.md
@@ -416,7 +419,9 @@ The Implementation Layer MUST NOT redefine:
 
 ## 6.1 Constitutional Authority
 
-Shared governance authority belongs exclusively to the Constitutional Layer.
+Supreme constitutional principles reside in `Constitution.md`.
+
+Shared governance authority is operationalized exclusively through the Constitutional Layer.
 
 Only governance authority artifacts may define:
 

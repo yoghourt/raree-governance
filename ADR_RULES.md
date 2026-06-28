@@ -29,9 +29,13 @@ This document governs all ADR behavior across Raree governance repositories and 
 
 The canonical governance authority hierarchy is defined in `FOUNDATION.md §3`.
 
+All ADRs derive authority from `Constitution.md` and MUST remain compatible with its principles.
+
 In the context of ADR governance, the precedence ordering relevant to ADR authors is:
 
 ```text id="kyscxc"
+Constitution.md  (Constitutional Authority)
+    ↓
 FOUNDATION.md  (Constitutional Layer)
     ↓
 ADR_RULES.md   (Constitutional Layer — this document)

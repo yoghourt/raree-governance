@@ -24,6 +24,7 @@ Invariant checks:
 
 ## Refs
 
+- Constitution: `Constitution.md`
 - Governance:
 - ADR:
 

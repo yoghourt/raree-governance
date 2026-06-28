@@ -10,6 +10,7 @@ import { fileURLToPath } from "node:url";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
 const requiredFiles = [
+  "Constitution.md",
   "FOUNDATION.md",
   "RETRIEVAL.md",
   "STREAMING.md",

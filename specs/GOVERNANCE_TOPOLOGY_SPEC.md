@@ -206,6 +206,7 @@ but Spec v1 does not require implementation yet.
 
 ```txt
 raree-governance/
+├── Constitution.md
 ├── FOUNDATION.md
 ├── RETRIEVAL.md
 ├── STREAMING.md
